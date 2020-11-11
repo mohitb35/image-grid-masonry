@@ -93,11 +93,37 @@ function renderCard(imageDetails) {
 	return (
 		`
 		<article class="result-card" data-modal-image="${imageDetails.urls.regular}" data-modal-text="${imageDetails["alt_description"]}">
-			<img class="result-image" src="${imageDetails.urls.small}">
-			<h2 class="result-title">${imageDetails["alt_description"]}</h2>
+			<div class="container">
+				<img class="result-image" src="${imageDetails.urls.small}" onload="resizeGridCard(this.parentElement.parentElement)">
+				<h2 class="result-title">${imageDetails["alt_description"]}</h2>
+			</div>
 		</article>
 		`
 	);
+}
+
+window.addEventListener('resize', resizeAllGridCards);
+
+// Iterate though grid items and resize all
+function resizeAllGridCards(){
+	let cards = document.getElementsByClassName('result-card');
+	for (let card of cards) {
+		resizeGridCard(card);
+	}
+}
+
+// Sets the grid-row-end property to span a number of rows based on content height
+function resizeGridCard(card) {
+	// Get grid row height and gap height
+	let rowHeight = parseInt(window.getComputedStyle(resultsGrid).getPropertyValue('grid-auto-rows'));
+	let rowGap = parseInt(window.getComputedStyle(resultsGrid).getPropertyValue('grid-row-gap'));
+	let content = card.querySelector('.container');
+
+	// Get content height and calculate number of spans for the card to occupy
+	let itemHeight = content.getBoundingClientRect().height;
+	let rowSpan = Math.ceil(itemHeight / (rowHeight + rowGap));
+	console.log(rowHeight, rowGap, itemHeight, rowSpan);
+	card.style.gridRowEnd = `span ${rowSpan + 1}`;
 }
 
 searchImages(SEARCH_KEYWORD);

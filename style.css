@@ -186,8 +186,10 @@ Main Content Styles
 #results-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	grid-gap: 20px;
+	grid-row-gap: 10px;
+	grid-column-gap: 20px;
 	padding: 30px 30px;
+	grid-auto-rows: 0;
 }
 
 #results-grid.loading, #results-grid.error {
@@ -196,7 +198,7 @@ Main Content Styles
 
 .result-card {
 	background-color: #ffffff;
-	border-radius: 5%;
+	border-radius: 10px;
 	overflow: hidden;
 	box-shadow:  0 3px 8px rgba(0,0,0,0.25);
 	cursor: zoom-in;
@@ -204,14 +206,17 @@ Main Content Styles
 
 .result-image {
 	width: 100%;
-	height: 240px;
 	object-fit: cover;
-}
+} 
 
 .result-title {
 	padding: 10px;
-	margin-bottom: 10px;
 	font-size: 1.25rem;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
 }
 
 /* Loader */
