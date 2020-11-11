@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Grid</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="nav-first">
+			<div class=brand>
+				<img src="./assets/mindshoots icon 2x.png" class="brand-image">
+				<span class="brand-name">mindshoots</span>
+			</div>
+			<div class="btn-menu" id="btn-menu">
+				<span class="btn-menu-label">Menu</span>
+				<span class="menu-icon"></span>
+			</div>
+		</div>
+		<nav class="nav-menu" id="nav-menu">
+			<ul class="nav-link-container">
+				<li class="nav-link">
+					<a href="#">Link 1</a>
+				</li>
+				<li class="nav-link">
+					<a href="#">Link 2</a>
+				</li>
+				<li class="nav-link">
+					<a href="#">Link 3</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main class="main-content">
+		<section class="banner">
+			<div class="tagline-container">
+				<h1 class="tagline">Mind travel for stationary times</h1>
+			</div>
+			<span class="credit">
+				Photo by <a href="https://unsplash.com/@douglasgausi?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Douglas Gausi</a> on <a href="https://unsplash.com/s/photos/hills?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+			</span>
+		</section>
+		<div class="paging-bar">
+			<nav id="page-nav">
+				<!-- <button id="btn-previous-page" disabled>← Previous</button>
+				<button class="btn-paging selected" disabled>1</button>
+				<button class="btn-paging">2</button>
+				<button class="btn-paging">3</button>
+				<button id="btn-next-page">Next →</button> -->
+			</nav>
+			<form>
+				<select name="page-size" id="page-size-selector" class="hidden">
+					<option disabled>Items per page</option>
+					<option value="10" selected>10</option>
+					<option value="20">20</option>
+					<option value="30">30</option>s
+				</select>
+			</form>
+		</div>
+		<section id="results-grid">
+			<!-- <article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">man with red hiking backpack facing body of water and mountains at daytime</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article>
+			<article class="result-card">
+				<img class="result-image" src="assets/joolay-life-3umpERoLelU-unsplash.jpg">
+				<h2 class="result-title">Kaza, Himachal Pradesh</h2>
+			</article> -->
+		</section>
+	</main>
+	<div id="result-modal" class="modal hidden">
+		<div class="modal-wrapper">
+			<div class="modal-contents">
+				<div class="close" id="btn-modal-close">&times;</div>
+				<img class="full-image" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE3MDE2Mn0">
+				<p class="image-caption">An image</p>
+			</div>
+		</div>	
+	</div>
+	<footer>Copyright © 2020 mindshoots</footer>
+	<script src="config.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
